@@ -1,0 +1,91 @@
+extends layouts/master
+
+block content
+	#container.container
+		
+		#camera.threed(style='transform: translate3d(0px, -150px, 0px) rotateZ(180deg) rotateY(180deg)')
+		
+			#intro.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/sky/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/sky/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/sky/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/sky/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/sky/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/sky/top.jpg")') 
+
+				#logo-wrapper.threed
+					#logo.threed
+						h1 VRN
+
+			#museum.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/museum/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/museum/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/museum/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/museum/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/museum/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/museum/top.jpg")') 
+
+
+				.chiron.threed
+					h1 Natural History Museum
+					.globe-container.threed
+						.globe.threed
+				
+			#mars.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/mars/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/mars/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/mars/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/mars/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/mars/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/mars/top.jpg")') 
+
+				.chiron-article.threed
+					#article
+						//#loading
+						#datetime Aug 22, 4:50
+						#title
+							#nametag Iceland
+							h1 Red Alert
+							hr
+							h2 Stéfan Björnsson
+							h3 Icelandic News Agency
+						#place.is-hidden
+							h1 High Plains
+							.line
+							.dot
+						#breaking
+							h1 Breaking News
+							h2 Rebel fighters seize mountain fortress
+						#menu.is-hidden
+							ul
+								li
+									.thumb						
+									a(href="") Forest fires intensify 
+									span Colorado
+								li
+									.thumb						
+									a(href="") Beluga born in Vancouver 
+									span Vancouver
+								li
+									.thumb						
+									a(href="") Russian convoy crosses border 
+									span Ukraine
+								li
+									.thumb						
+									a(href="") Indian Mars mission a success 
+									span Mumbai
+								li
+									.thumb						
+									a(href="") Indian Mars mission a success 
+									span Mumbai
+
+						#chyron
+							b News
+							span Northern California braces for aftershocks
+							span Russia seizes Japan research whaling ship
+							span Iceland volcano raises aviation alert
+					
+				
+			#transition.threed
+
+			
