@@ -1,8 +1,7 @@
-## VR Skybox
+## VR Tour concept
 ------------
-Skybox example built using basic VR enabled HTML.
 
-http://caseyyee.github.io/vr-skybox/build/index.html
+http://caseyyee.github.io/vr-browse/build/index.html
 
 
 ------------
@@ -15,12 +14,10 @@ http://caseyyee.github.io/vr-skybox/build/index.html
 
 * Oculus rift HMD (confirmed working with DK1).
 
-* Keys:  "f" for VR view.
-
 
 #### Installation:
 
-1. Clone this repo `git clone git@github.com:caseyyee/vr-skybox.git`
+1. Clone this repo `git clone git@github.com:caseyyee/vr-browse.git`
 
 2. Install npm dependencies: `npm install`
 
