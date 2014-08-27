@@ -12,14 +12,67 @@ html, body {
   font-size: 5pt;
 }
 
-/* keeping style block in body to make it easier to see the relationship between elements */
-/* Container is nothing special; it's the element that is made full screen.
- * When non-fullscreen, you can add transforms to this element to make the scene
- * make sense in 2D (instead of being centered around the top left).  That transform
- * will cascade down to children when fullscreen though, so make sure to remove it when
- * entering fullscreen.  There's a -moz-full-screen selector that's useful for this.
- */
-/* line 26, ../src/sass/style.scss */
+/* line 19, ../src/sass/style.scss */
+#splash {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  background: linear-gradient(to bottom, #fff8d6 64%, #fffbed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 31, ../src/sass/style.scss */
+.splash-title {
+  max-width: 50%;
+}
+/* line 34, ../src/sass/style.scss */
+.splash-title h1 {
+  font-size: 120px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #7BE19A;
+}
+/* line 43, ../src/sass/style.scss */
+.splash-title h2 {
+  font-size: 25px;
+  font-weight: 300;
+  margin: 0 0 70px 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+
+/* line 53, ../src/sass/style.scss */
+.splash-key-container {
+  margin: 10px;
+}
+
+/* line 56, ../src/sass/style.scss */
+.splash-key {
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+  background: #EA6044;
+  margin: 2px;
+}
+
+/* line 65, ../src/sass/style.scss */
+.splash-key-label {
+  font-size: 20px;
+  font-weight: 100;
+  margin: 20px;
+}
+
+/* line 75, ../src/sass/style.scss */
 #container:not(:-moz-full-screen) {
   /* this is just to move the scene to the visible area when not in fullscreen VR */
   transform: translate(50%, 50%);
@@ -43,7 +96,7 @@ html, body {
  * for moving elements around by their center point.  But it could also be set to 0,0,0 to
  * make it completely clear exactly where/how 3D objects are moving.
  */
-/* line 51, ../src/sass/style.scss */
+/* line 100, ../src/sass/style.scss */
 .threed {
   transform-style: preserve-3d;
   position: absolute;
@@ -56,14 +109,14 @@ html, body {
  * to be; that is, if you want the camera to be at (0, 0, 500), then the transform needs to be
  * set to (0, 0, -500).  The transform-origin is set here because we want to go from the origin
  */
-/* line 62, ../src/sass/style.scss */
+/* line 111, ../src/sass/style.scss */
 #camera {
   transform-origin: 0 0 0;
   /* the transform itself is set programatically, since it needs to take into account the HMD orientation */
   border: 5px solid blue;
 }
 
-/* line 71, ../src/sass/style.scss */
+/* line 120, ../src/sass/style.scss */
 .skybox-side {
   width: 800px;
   height: 800px;
@@ -72,37 +125,37 @@ html, body {
   text-align: center;
 }
 
-/* line 78, ../src/sass/style.scss */
+/* line 127, ../src/sass/style.scss */
 .skybox-front {
   transform: translate3d(-400px, -400px, 400px);
 }
 
-/* line 81, ../src/sass/style.scss */
+/* line 130, ../src/sass/style.scss */
 .skybox-left {
   transform: translate3d(-800px, -400px, 0) rotateY(-90deg);
 }
 
-/* line 85, ../src/sass/style.scss */
+/* line 134, ../src/sass/style.scss */
 .skybox-right {
   transform: translate3d(0, -400px, 0) rotateY(90deg);
 }
 
-/* line 89, ../src/sass/style.scss */
+/* line 138, ../src/sass/style.scss */
 .skybox-back {
   transform: translate3d(-400px, -400px, -398px) rotateY(180deg);
 }
 
-/* line 93, ../src/sass/style.scss */
+/* line 142, ../src/sass/style.scss */
 .skybox-bottom {
   transform: translate3d(-400px, 0, 0) rotateX(90deg);
 }
 
-/* line 96, ../src/sass/style.scss */
+/* line 145, ../src/sass/style.scss */
 .skybox-top {
   transform: translate3d(-400px, -798px, 0) rotateX(90deg);
 }
 
-/* line 105, ../src/sass/style.scss */
+/* line 153, ../src/sass/style.scss */
 .chiron {
   width: 60px;
   height: 100px;
@@ -115,31 +168,68 @@ html, body {
   transform: translate3d(-50%, -50%, 200px);
 }
 
-/* line 116, ../src/sass/style.scss */
+/* line 164, ../src/sass/style.scss */
 .chiron h1 {
   margin: 0;
   padding: 0;
 }
 
-/* line 125, ../src/sass/style.scss */
+/* line 172, ../src/sass/style.scss */
 .transition {
-  transform: translateX(-48.5px) translateY(-48.5px) rotateY(90deg);
+  transform: translateX(-100px) translateY(-100px);
 }
 
-/* line 128, ../src/sass/style.scss */
+/* line 175, ../src/sass/style.scss */
 .pane {
-  width: 97px;
-  height: 97px;
-  background: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #727272;
 }
 
-/* line 136, ../src/sass/style.scss */
+/* line 183, ../src/sass/style.scss */
+.shape-frame {
+  border: 2px solid white;
+  width: 150px;
+  height: 250px;
+  transform: translate(-50%, -60%);
+}
+/* line 189, ../src/sass/style.scss */
+.shape-frame h1 {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  margin: 15px;
+  font-weight: 100;
+}
+
+/* line 200, ../src/sass/style.scss */
 .globe-container {
-  transform: translate3d(35px, 70px, 0);
+  transform: translate3d(-50%, -50%, 300px);
 }
 
-/* line 139, ../src/sass/style.scss */
+/* line 203, ../src/sass/style.scss */
 .globe {
+  animation: revolve 15s infinite normal linear;
+}
+
+/* line 207, ../src/sass/style.scss */
+.cone-container {
+  transform: translate3d(300px, -50%, 0px) rotateY(90deg);
+}
+
+/* line 210, ../src/sass/style.scss */
+.cone {
+  animation: revolve 15s infinite normal linear;
+}
+
+/* line 214, ../src/sass/style.scss */
+.cube-container {
+  transform: translate3d(-300px, -50%, 0px) rotateY(-90deg);
+}
+
+/* line 217, ../src/sass/style.scss */
+.cube {
   animation: revolve 15s infinite normal linear;
 }
 
@@ -151,47 +241,118 @@ html, body {
     transform: rotateY(360deg) rotateX(80deg);
   }
 }
-/* line 152, ../src/sass/style.scss */
+/* line 232, ../src/sass/style.scss */
 .globe-slice {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 10px solid white;
   background: transparent;
 }
 
-/* line 159, ../src/sass/style.scss */
+/* line 239, ../src/sass/style.scss */
 #globe0, #globe9 {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
 }
 
-/* line 163, ../src/sass/style.scss */
+/* line 243, ../src/sass/style.scss */
 #globe1, #globe8 {
+  width: 60px;
+  height: 60px;
+}
+
+/* line 247, ../src/sass/style.scss */
+#globe2, #globe7 {
+  width: 80px;
+  height: 80px;
+}
+
+/* line 251, ../src/sass/style.scss */
+#globe3, #globe6 {
+  width: 95px;
+  height: 95px;
+}
+
+/* line 257, ../src/sass/style.scss */
+.cone-slice {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid white;
+  background: transparent;
+}
+
+/* line 264, ../src/sass/style.scss */
+#cone0 {
+  width: 10px;
+  height: 10px;
+}
+
+/* line 268, ../src/sass/style.scss */
+#cone1 {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 272, ../src/sass/style.scss */
+#cone2 {
   width: 30px;
   height: 30px;
 }
 
-/* line 167, ../src/sass/style.scss */
-#globe2, #globe7 {
+/* line 276, ../src/sass/style.scss */
+#cone3 {
   width: 40px;
   height: 40px;
 }
 
-/* line 171, ../src/sass/style.scss */
-#globe3, #globe6 {
-  width: 47.5px;
-  height: 47.5px;
+/* line 280, ../src/sass/style.scss */
+#cone4 {
+  width: 50px;
+  height: 50px;
 }
 
-/* line 177, ../src/sass/style.scss */
+/* line 284, ../src/sass/style.scss */
+#cone5 {
+  width: 60px;
+  height: 60px;
+}
+
+/* line 288, ../src/sass/style.scss */
+#cone6 {
+  width: 70px;
+  height: 70px;
+}
+
+/* line 292, ../src/sass/style.scss */
+#cone7 {
+  width: 80px;
+  height: 80px;
+}
+
+/* line 296, ../src/sass/style.scss */
+#cone8 {
+  width: 90px;
+  height: 90px;
+}
+
+/* line 302, ../src/sass/style.scss */
+.cube-slice {
+  width: 70px;
+  height: 70px;
+  border: 10px solid white;
+  background: transparent;
+}
+
+/* line 311, ../src/sass/style.scss */
 #logo-wrapper {
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%) translate3D(0, 0, 200px);
 }
 
-/* line 182, ../src/sass/style.scss */
+/* line 316, ../src/sass/style.scss */
 #logo {
   background: red;
   width: 100%;
@@ -203,7 +364,7 @@ html, body {
   transform: translateY(250px);
 }
 
-/* line 193, ../src/sass/style.scss */
+/* line 327, ../src/sass/style.scss */
 #logo h1 {
   margin: 0;
   padding: 0;
@@ -211,15 +372,15 @@ html, body {
   font-size: 50px;
 }
 
-/* line 206, ../src/sass/style.scss */
-.chiron-article {
+/* line 342, ../src/sass/style.scss */
+.nature-container {
   width: 40em;
   height: 26em;
   transform: translate3d(-50%, -70%, 200px);
 }
 
-/* line 212, ../src/sass/style.scss */
-#article {
+/* line 348, ../src/sass/style.scss */
+#nature {
   width: 40em;
   height: 26em;
   margin: 4em auto 0;
@@ -227,7 +388,22 @@ html, body {
   position: relative;
 }
 
-/* line 220, ../src/sass/style.scss */
+/* line 357, ../src/sass/style.scss */
+.mars-container {
+  width: 40em;
+  height: 26em;
+  transform: translate3d(-50%, -70%, 200px);
+}
+
+/* line 363, ../src/sass/style.scss */
+#mars {
+  width: 40em;
+  height: 26em;
+  margin: 4em auto 0;
+  position: relative;
+}
+
+/* line 370, ../src/sass/style.scss */
 #loading {
   width: 100%;
   height: 100%;
@@ -238,7 +414,7 @@ html, body {
   z-index: 1;
 }
 
-/* line 229, ../src/sass/style.scss */
+/* line 379, ../src/sass/style.scss */
 #datetime {
   background-color: #333;
   color: white;
@@ -253,7 +429,7 @@ html, body {
   top: 1em;
 }
 
-/* line 242, ../src/sass/style.scss */
+/* line 392, ../src/sass/style.scss */
 #title {
   display: inline-block;
   border: 0px solid white;
@@ -261,7 +437,7 @@ html, body {
   left: 20em;
   top: 10em;
 }
-/* line 250, ../src/sass/style.scss */
+/* line 399, ../src/sass/style.scss */
 #title #nametag {
   background-color: #e04540;
   color: white;
@@ -271,7 +447,7 @@ html, body {
   margin: 0;
   display: inline-block;
 }
-/* line 260, ../src/sass/style.scss */
+/* line 409, ../src/sass/style.scss */
 #title h1 {
   color: white;
   font-weight: 700;
@@ -279,7 +455,7 @@ html, body {
   margin: 0.2em 0;
   text-shadow: 0 0.03em 0 rgba(0, 0, 0, 0.25);
 }
-/* line 268, ../src/sass/style.scss */
+/* line 417, ../src/sass/style.scss */
 #title hr {
   display: block;
   height: 1px;
@@ -289,7 +465,7 @@ html, body {
   padding: 0;
   width: 1.5em;
 }
-/* line 278, ../src/sass/style.scss */
+/* line 427, ../src/sass/style.scss */
 #title h2 {
   color: white;
   font-weight: 500;
@@ -297,7 +473,7 @@ html, body {
   margin: 0em 0;
   text-shadow: 0 0.03em 0 rgba(0, 0, 0, 0.25);
 }
-/* line 286, ../src/sass/style.scss */
+/* line 435, ../src/sass/style.scss */
 #title h3 {
   color: white;
   font-weight: 400;
@@ -306,7 +482,7 @@ html, body {
   text-shadow: 0 0.03em 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 295, ../src/sass/style.scss */
+/* line 444, ../src/sass/style.scss */
 #place {
   margin: 0;
   padding: 0;
@@ -318,7 +494,7 @@ html, body {
   left: 30em;
   top: 15em;
 }
-/* line 305, ../src/sass/style.scss */
+/* line 454, ../src/sass/style.scss */
 #place h1 {
   margin: 0;
   padding: 0.5em 0.6em;
@@ -333,7 +509,7 @@ html, body {
   left: 0;
   bottom: 0;
 }
-/* line 319, ../src/sass/style.scss */
+/* line 468, ../src/sass/style.scss */
 #place .line {
   width: 0;
   height: 2em;
@@ -344,7 +520,7 @@ html, body {
   left: 0;
   bottom: 0;
 }
-/* line 328, ../src/sass/style.scss */
+/* line 477, ../src/sass/style.scss */
 #place .dot {
   width: 0.75em;
   height: 0.75em;
@@ -355,13 +531,13 @@ html, body {
   bottom: -0.375em;
 }
 
-/* line 337, ../src/sass/style.scss */
+/* line 486, ../src/sass/style.scss */
 #breaking {
   position: absolute;
   top: 10em;
   left: 5em;
 }
-/* line 343, ../src/sass/style.scss */
+/* line 490, ../src/sass/style.scss */
 #breaking h1 {
   margin: 0;
   padding: 0;
@@ -371,7 +547,7 @@ html, body {
   font-weight: 500;
   font-size: 0.75em;
 }
-/* line 352, ../src/sass/style.scss */
+/* line 499, ../src/sass/style.scss */
 #breaking h2 {
   width: 10em;
   margin: 0;
@@ -382,7 +558,7 @@ html, body {
   font-size: 1em;
 }
 
-/* line 363, ../src/sass/style.scss */
+/* line 510, ../src/sass/style.scss */
 #menu {
   width: 30em;
   position: absolute;
@@ -390,42 +566,41 @@ html, body {
   top: 10em;
   font-size: 0.65em;
 }
-/* line 370, ../src/sass/style.scss */
+/* line 516, ../src/sass/style.scss */
 #menu ul {
   padding: 0;
   margin: 0;
   list-style: none;
   line-height: 1.25em;
 }
-/* line 376, ../src/sass/style.scss */
+/* line 522, ../src/sass/style.scss */
 #menu li {
   width: 10em;
   float: left;
   padding: 0 2em 1em 0;
 }
-/* line 382, ../src/sass/style.scss */
+/* line 528, ../src/sass/style.scss */
 #menu .thumb {
   width: 100%;
   height: 6em;
   margin-bottom: 0.5em;
   background-color: rgba(255, 255, 255, 0.75);
 }
-/* line 389, ../src/sass/style.scss */
+/* line 535, ../src/sass/style.scss */
 #menu a {
   text-decoration: none;
   color: white;
 }
-/* line 394, ../src/sass/style.scss */
+/* line 540, ../src/sass/style.scss */
 #menu span {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 399, ../src/sass/style.scss */
+/* line 545, ../src/sass/style.scss */
 #chyron {
   background-color: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   margin: 1em;
-  padding: 0.5em;
   font-size: 0.75em;
   color: black;
   position: absolute;
@@ -433,21 +608,83 @@ html, body {
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
-  width: 100%;
+  width: 95%;
   font-weight: 400;
 }
-/* line 413, ../src/sass/style.scss */
+/* line 560, ../src/sass/style.scss */
 #chyron b {
   font-weight: 600;
   text-transform: uppercase;
   padding-right: 1.5em;
 }
-/* line 420, ../src/sass/style.scss */
+/* line 567, ../src/sass/style.scss */
 #chyron span {
   padding-right: 1.5em;
 }
 
-/* line 428, ../src/sass/style.scss */
+/* line 573, ../src/sass/style.scss */
+#louvre {
+  width: 200px;
+  left: -60px;
+  top: -240px;
+  font-size: 10px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: translate3d(-50%, -50%, 400px);
+  color: white;
+}
+/* line 583, ../src/sass/style.scss */
+#louvre h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 55px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+/* line 590, ../src/sass/style.scss */
+#louvre p {
+  text-align: justify;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* line 598, ../src/sass/style.scss */
+.tag {
+  width: 150px;
+}
+/* line 600, ../src/sass/style.scss */
+.tag .label {
+  width: 150px;
+  border: 1px solid white;
+  padding: 4px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+/* line 609, ../src/sass/style.scss */
+.tag .label:after {
+  content: " ";
+  position: absolute;
+  top: 22px;
+  left: -15px;
+  width: 3px;
+  height: 70px;
+  transform: rotate(25deg);
+  background: white;
+}
+/* line 619, ../src/sass/style.scss */
+.tag .distance {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 15px;
+  color: #fff;
+}
+/* line 625, ../src/sass/style.scss */
+.tag .distance:after {
+  content: 'km';
+}
+
+/* line 631, ../src/sass/style.scss */
 .is-hidden {
   display: none;
 }

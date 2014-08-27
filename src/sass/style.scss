@@ -12,14 +12,63 @@ html, body {
   
 }
 
-/* keeping style block in body to make it easier to see the relationship between elements */
 
-/* Container is nothing special; it's the element that is made full screen.
- * When non-fullscreen, you can add transforms to this element to make the scene
- * make sense in 2D (instead of being centered around the top left).  That transform
- * will cascade down to children when fullscreen though, so make sure to remove it when
- * entering fullscreen.  There's a -moz-full-screen selector that's useful for this.
- */
+
+
+// splash
+#splash {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  background: linear-gradient(to bottom, #fff8d6 64%,#fffbed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-title {
+  max-width: 50%;
+
+  h1 {
+    font-size: 120px;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #7BE19A;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0 0 70px 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7e7e7e;
+  }
+}
+.splash-key-container {
+  margin: 10px;
+}
+.splash-key {
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+  background: #EA6044;
+  margin: 2px;
+}
+.splash-key-label {
+  font-size: 20px;
+  font-weight: 100;
+  margin: 20px;
+}
+
+
 #container {
 }
 
@@ -95,9 +144,8 @@ $skybox-size: 800px;
 }
 .skybox-top {
   transform: translate3d($skybox-size/2*-1,$skybox-size*-1 + 2px,0) rotateX(90deg);  
-  // v
+  // display: none;
 }
-
 
 
 
@@ -119,26 +167,58 @@ $skybox-size: 800px;
 }
 
 
-
 // transition
-$pane-size: 97px;
+$pane-size: 200px;
 .transition {
-  transform: translateX($pane-size/2*-1) translateY($pane-size/2*-1) rotateY(90deg);
+  transform: translateX($pane-size/2*-1) translateY($pane-size/2*-1);
 }
 .pane {
   width: $pane-size;
   height: $pane-size;
-  background: rgba(0,0,0,1);
+  border-radius: 50%;
+  background: rgba(114,114,114,1);
+}
 
+
+.shape-frame {
+  border: 2px solid white;
+  width: 150px;
+  height: 250px;
+  transform: translate(-50%,-60%);
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+
+    color: #fff;
+    margin: 15px;
+    font-weight: 100;
+  }
 }
 
 // div globe
 .globe-container {
-  transform: translate3d(35px,70px,0)
+  transform: translate3d(-50%,-50%,300px);
 }
 .globe {
   animation: revolve 15s infinite normal linear;
 }
+
+.cone-container {
+  transform: translate3d(300px,-50%,0px) rotateY(90deg);
+}
+.cone {
+  animation: revolve 15s infinite normal linear;
+}
+
+.cube-container {
+  transform: translate3d(-300px,-50%, 0px) rotateY(-90deg);
+}
+.cube {
+  animation: revolve 15s infinite normal linear;
+}
+
+
 @keyframes revolve {
   0% {
     transform: rotateY(0) rotateX(80deg);
@@ -148,12 +228,12 @@ $pane-size: 97px;
   }
 }
 
-$globe-rad: 50px;
+$globe-rad: 100px;
 .globe-slice {
   width: $globe-rad;
   height: $globe-rad;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,1);
+  border: 10px solid rgba(255,255,255,1);
   background: transparent;
 }
 #globe0, #globe9 {
@@ -172,6 +252,60 @@ $globe-rad: 50px;
   width: $globe-rad*.95;
   height: $globe-rad*.95;
 }
+
+// cone
+.cone-slice {
+  width: $globe-rad;
+  height: $globe-rad;
+  border-radius: 50%;
+  border: 10px solid rgba(255,255,255,1);
+  background: transparent;
+}
+#cone0 {
+  width: $globe-rad*0.1;
+  height: $globe-rad*0.1;
+}
+#cone1 {
+  width: $globe-rad*0.2;
+  height: $globe-rad*0.2;
+}
+#cone2 {
+  width: $globe-rad*0.3;
+  height: $globe-rad*0.3;
+}
+#cone3 {
+  width: $globe-rad*0.4;
+  height: $globe-rad*0.4;
+}
+#cone4 {
+  width: $globe-rad*0.5;
+  height: $globe-rad*0.5;
+}
+#cone5 {
+  width: $globe-rad*0.6;
+  height: $globe-rad*0.6;
+}
+#cone6 {
+  width: $globe-rad*0.7;
+  height: $globe-rad*0.7;
+}
+#cone7 {
+  width: $globe-rad*0.8;
+  height: $globe-rad*0.8;
+}
+#cone8 {
+  width: $globe-rad*0.9;
+  height: $globe-rad*0.9;
+}
+
+// cube
+.cube-slice {
+  width: $globe-rad*.7;
+  height: $globe-rad*.7;
+  border: 10px solid rgba(255,255,255,1);
+  background: transparent;
+}
+
 
 // logo
 #logo-wrapper {
@@ -203,17 +337,33 @@ $green: rgba(29,185,146,1);
 $yellow: rgba(248,188,74,1);
 $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
 
-.chiron-article {
+
+
+.nature-container {
   width: 40em;
   height: 26em;
   transform: translate3d(-50%,-70%, 200px);
 }
 
-#article {
+#nature {
     width: 40em;
     height: 26em;
     margin: 4em auto 0;
     border: 2px solid rgba(255,255,255,0.25);
+    position: relative;
+}
+
+
+.mars-container {
+  width: 40em;
+  height: 26em;
+  transform: translate3d(-50%,-70%, 200px);
+}
+
+#mars {
+    width: 40em;
+    height: 26em;
+    margin: 4em auto 0;
     position: relative;
 }
 
@@ -240,7 +390,6 @@ $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
 }
 
 #title{
-
     display: inline-block;
     border: 0px solid white;
     position: absolute;
@@ -334,34 +483,31 @@ $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
     }
 }
 
-#breaking {
+#breaking {    
+  position: absolute;
+  top: 10em; left: 5em;
 
-    
-    position: absolute;
-    top: 10em; left: 5em;
+  h1 {
+      margin: 0; padding: 0;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 0.025em;
+      font-weight: 500;
+      font-size: 0.75em;
+  }
 
-    h1 {
-        margin: 0; padding: 0;
-        text-transform: uppercase;
-        color: white;
-        letter-spacing: 0.025em;
-        font-weight: 500;
-        font-size: 0.75em;
-    }
-
-    h2 {
-        width: 10em;
-        margin: 0;
-        padding: 0.75em;
-        background-color: rgba(255,255,255,0.75);
-        color: black;
-        font-weight: 400;
-        font-size: 1em;
-    }
+  h2 {
+      width: 10em;
+      margin: 0;
+      padding: 0.75em;
+      background-color: rgba(255,255,255,0.75);
+      color: black;
+      font-weight: 400;
+      font-size: 1em;
+  }
 }
 
 #menu {
-
     width: 30em;
     position: absolute;
     left: 110%; top: 10em;
@@ -399,7 +545,8 @@ $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
 #chyron {
     background-color: rgba(255,255,255,0.5);
     box-sizing: border-box;
-    margin: 1em; padding: 0.5em;
+    margin: 1em; 
+
     font-size: 0.75em;
     color: black;
     position: absolute;
@@ -407,7 +554,7 @@ $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
     overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
-    width: 100%;
+    width: 95%;
     font-weight: 400;
 
     b {
@@ -422,7 +569,63 @@ $textshadow-1: 0 0.03em 0 rgba(0,0,0,0.25);
     }
 }
 
+// louvre
+#louvre {
+  width: 200px;
+  left: -60px;
+  top: -240px;
+  font-size: 10px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: translate3d(-50%,-50%, 400px);
+  color: white;
 
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    text-align: justify;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+}
+
+// tags
+.tag {
+  width: 150px;
+  .label {
+    width: 150px;
+    border: 1px solid white;
+    padding: 4px 15px;
+    font-size: 12px;
+    font-weight: 400;
+    background: rgba(255,255,255,0.4);
+    position: relative;
+  }
+  .label:after {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    left: -15px;
+    width: 3px;
+    height: 70px;
+    transform: rotate(25deg);
+    background: white;
+  }
+  .distance {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 15px;
+    color: #fff;
+  }
+  .distance:after {
+    content: 'km';
+  }
+}
 
 //  helper classes
 .is-hidden {

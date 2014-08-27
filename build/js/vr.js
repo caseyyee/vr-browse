@@ -136,8 +136,9 @@ function vrDeviceCallback(vrdevs) {
 }
 
 function onkey(event) {
-  switch (String.fromCharCode(event.charCode)) {
-  case 'f':
+  console.log(event.key);
+  switch (event.key) {
+  case 'v':
     cssContainer.mozRequestFullScreen({ vrDisplay: vrHMD });
     break;
   case 'z':
@@ -154,6 +155,15 @@ function onkey(event) {
     break;
   case '3':
     SceneManager.show('mars');
+    break;
+  case '4':
+    SceneManager.show('puydesancy');
+    break;
+  case 'Left':
+    SceneManager.prev();
+    break;
+  case 'Right':
+    SceneManager.next();
     break;
   }
 }
@@ -179,6 +189,8 @@ function init() {
   // bind events
   window.addEventListener("keypress", onkey, true);
   window.addEventListener("mousemove", onmousemove);
+
+  SceneManager.show('intro');
 }
 
 window.addEventListener("load", init, false);

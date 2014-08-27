@@ -2,7 +2,6 @@ extends layouts/master
 
 block content
 	#container.container
-		
 		#camera.threed(style='transform: translate3d(0px, -150px, 0px) rotateZ(180deg) rotateY(180deg)')
 		
 			#intro.threed.is-hidden
@@ -13,49 +12,64 @@ block content
 				.skybox-side.skybox-bottom.threed(style='background-image: url("images/sky/bottom.jpg")') 
 				.skybox-side.skybox-top.threed(style='background-image: url("images/sky/top.jpg")') 
 
-				#logo-wrapper.threed
-					#logo.threed
-						h1 VRN
+				//- #logo-wrapper.threed
+				//- 	#logo.threed
+				//- 		h1 VRN
 
-			#museum.threed.is-hidden
-				.skybox-side.skybox-front.threed(style='background-image: url("images/museum/front.jpg")') 
-				.skybox-side.skybox-left.threed(style='background-image: url("images/museum/left.jpg")') 
-				.skybox-side.skybox-right.threed(style='background-image: url("images/museum/right.jpg")') 
-				.skybox-side.skybox-back.threed(style='background-image: url("images/museum/back.jpg")') 
-				.skybox-side.skybox-bottom.threed(style='background-image: url("images/museum/bottom.jpg")') 
-				.skybox-side.skybox-top.threed(style='background-image: url("images/museum/top.jpg")') 
-
-
-				.chiron.threed
-					h1 Natural History Museum
-					.globe-container.threed
-						.globe.threed
+				.globe-container.threed
+					.shape-frame.threed
+						h1 Globe
+					.globe.threed
 				
-			#mars.threed.is-hidden
-				.skybox-side.skybox-front.threed(style='background-image: url("images/mars/front.jpg")') 
-				.skybox-side.skybox-left.threed(style='background-image: url("images/mars/left.jpg")') 
-				.skybox-side.skybox-right.threed(style='background-image: url("images/mars/right.jpg")') 
-				.skybox-side.skybox-back.threed(style='background-image: url("images/mars/back.jpg")') 
-				.skybox-side.skybox-bottom.threed(style='background-image: url("images/mars/bottom.jpg")') 
-				.skybox-side.skybox-top.threed(style='background-image: url("images/mars/top.jpg")') 
+				.cone-container.threed
+					.shape-frame.threed
+						h1 Cone
+					.cone.threed
 
-				.chiron-article.threed
-					#article
+				.cube-container.threed
+					.shape-frame.threed
+						h1 Cube
+					.cube.threed
+				
+			#museum.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/louvre/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/louvre/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/louvre/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/louvre/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/louvre/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/louvre/top.jpg")') 
+
+
+				
+				#louvre.threed
+					h1 Louvre
+					p The Louvre or the Louvre Museum is one of the world's largest museums and a historic monument. A central landmark of Paris, France, it is located on the Right Bank of the Seine in the 1st arrondissement.
+					
+			#puydesancy.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/puydesancy/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/puydesancy/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/puydesancy/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/puydesancy/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/puydesancy/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/puydesancy/top.jpg")') 
+
+				.nature-container.threed
+					#nature
 						//#loading
 						#datetime Aug 22, 4:50
 						#title
-							#nametag Iceland
-							h1 Red Alert
+							#nametag Travel
+							h1 Puy de Sancy
 							hr
-							h2 Stéfan Björnsson
-							h3 Icelandic News Agency
+							h2 Julianne Nardone
+							h3 travel-wise.com
 						#place.is-hidden
 							h1 High Plains
 							.line
 							.dot
 						#breaking
-							h1 Breaking News
-							h2 Rebel fighters seize mountain fortress
+							h1 Travel France
+							h2 A long extinct volcano makes a tourist feel like a kid again.
 						#menu.is-hidden
 							ul
 								li
@@ -84,8 +98,93 @@ block content
 							span Northern California braces for aftershocks
 							span Russia seizes Japan research whaling ship
 							span Iceland volcano raises aviation alert
+
+			#mars.threed.is-hidden
+				.skybox-side.skybox-front.threed(style='background-image: url("images/mars/front.jpg")') 
+				.skybox-side.skybox-left.threed(style='background-image: url("images/mars/left.jpg")') 
+				.skybox-side.skybox-right.threed(style='background-image: url("images/mars/right.jpg")') 
+				.skybox-side.skybox-back.threed(style='background-image: url("images/mars/back.jpg")') 
+				.skybox-side.skybox-bottom.threed(style='background-image: url("images/mars/bottom.jpg")') 
+				.skybox-side.skybox-top.threed(style='background-image: url("images/mars/top.jpg")') 
+
+				.tag.threed(style='transform: translate3d(350px, -0px, 400px) rotateY(25deg)')
+					.label Holden Crater
+					.distance 214
+
+				.tag.threed(style='transform: translate3d(450px, 50px, 100px) rotateY(45deg)')
+					.label Mawrth Vallis
+					.distance 3
+
+				.tag.threed(style='transform: translate3d(400px, -20px, -300px) rotateY(90deg)')
+					.label Eberswalde Crater
+					.distance 1,344
+
+				.tag.threed(style='transform: translate3d(-350px, -70px, 500px) rotateY(-45deg)')
+					.label Gale Crater
+					.distance 655
+
+				.mars-container.threed
+					#mars
+						//#loading
+						#datetime Aug 22, 4:50
+						#title
+							#nametag Space
+							h1 Mars Curiosity
+							hr
+							h2 Stéfan Björnsson
+							h3 Explorers Journal
+						//- #place.is-hidden
+						//- 	h1 High Plains
+						//- 	.line
+						//- 	.dot
+						//- #breaking
+						//- #menu.is-hidden
+						//- 	ul
+						//- 		li
+						//- 			.thumb						
+						//- 			a(href="") Forest fires intensify 
+						//- 			span Colorado
+						//- 		li
+						//- 			.thumb						
+						//- 			a(href="") Beluga born in Vancouver 
+						//- 			span Vancouver
+						//- 		li
+						//- 			.thumb						
+						//- 			a(href="") Russian convoy crosses border 
+						//- 			span Ukraine
+						//- 		li
+						//- 			.thumb						
+						//- 			a(href="") Indian Mars mission a success 
+						//- 			span Mumbai
+						//- 		li
+						//- 			.thumb						
+						//- 			a(href="") Indian Mars mission a success 
+						//- 			span Mumbai
+
+						//- #chyron
+						//- 	b News
+						//- 	span Northern California braces for aftershocks
+						//- 	span Russia seizes Japan research whaling ship
+						//- 	span Iceland volcano raises aviation alert
 					
 				
 			#transition.threed
+	#splash
+		.splash-title
+			h1 HIRO
+			h2 Tour guide concept
+
+			div.splash-key-container
+				button.splash-key V
+				span.splash-key-label Start VR mode.
+			
+			div.splash-key-container
+				button.splash-key M
+				span.splash-key-label Toggle mouse-look.
+
+			div.splash-key-container
+				button.splash-key &lt;
+				button.splash-key &gt;
+				span.splash-key-label Switch scenes.
 
 			
